@@ -43,7 +43,7 @@ jobs:
       - name: 'Build Native Image'
         run: ../mvnw -B --file pom.xml -Pnative package
 
-      - name: 'Create distribution'-state/
+      - name: 'Create distribution' 
         run: ../mvnw -B --file pom.xml -Pdist package -DskipTests
 
       - name: 'Upload build artifact'
