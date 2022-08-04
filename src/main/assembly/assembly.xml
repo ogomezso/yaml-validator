@@ -11,6 +11,10 @@
   </formats>
   <files>
     <file>
+      <source>../LICENSE</source>
+      <outputDirectory>./</outputDirectory>
+    </file>
+    <file>
       <source>${project.build.directory}/yaml-validator${executable-suffix}</source>
       <outputDirectory>./bin</outputDirectory>
       <destName>yaml-validator${executable-suffix}</destName>

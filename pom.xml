@@ -50,7 +50,7 @@
     <version.surefire.plugin>3.0.0-M5</version.surefire.plugin>
     <version.versions.plugin>2.8.1</version.versions.plugin>
 
-    <executable-suffix/>
+    <executable-suffix />
     <jreleaser.git.root.search>true</jreleaser.git.root.search>
 
     <app.name>${project.artifactId}</app.name>
@@ -141,11 +141,11 @@
     </extensions>
     <resources>
       <resource>
-          <!-- Filter for version name in properties -->
-          <directory>src/main/resources</directory>
-          <filtering>true</filtering>
+        <!-- Filter for version name in properties -->
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
       </resource>
-  </resources>
+    </resources>
     <pluginManagement>
       <plugins>
         <plugin>
@@ -168,23 +168,8 @@
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>${version.deploy.plugin}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-enforcer-plugin</artifactId>
           <version>${version.enforcer.plugin}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-failsafe-plugin</artifactId>
-          <version>${version.failsafe.plugin}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-install-plugin</artifactId>
-          <version>${version.install.plugin}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -200,11 +185,6 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
           <version>${version.site.plugin}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-gpg-plugin</artifactId>
-          <version>${version.gpg.plugin}</version>
         </plugin>
         <plugin>
           <groupId>com.mycila</groupId>
@@ -261,6 +241,13 @@
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <configuration>
+          <propertiesEncoding>${project.build.sourceEncoding}</propertiesEncoding>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
           <parameters>${maven.compiler.parameters}</parameters>
@@ -309,6 +296,22 @@
         </configuration>
       </plugin>
       <plugin>
+        <groupId>org.commonjava.maven.plugins</groupId>
+        <artifactId>directory-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>resolve-rootdir</id>
+            <goals>
+              <goal>highest-basedir</goal>
+            </goals>
+            <phase>initialize</phase>
+            <configuration>
+              <property>rootdir</property>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
         <groupId>pl.project13.maven</groupId>
         <artifactId>git-commit-id-plugin</artifactId>
         <executions>
@@ -346,23 +349,23 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
         <configuration>
-            <attach>false</attach>
-            <appendAssemblyId>false</appendAssemblyId>
-            <finalName>${project.name}-${project.version}-${os.detected.classifier}</finalName>
-            <outputDirectory>${app.distribution.directory}</outputDirectory>
-            <workDirectory>${project.build.directory}/assembly/work</workDirectory>
-            <skipAssembly>true</skipAssembly>
+          <attach>false</attach>
+          <appendAssemblyId>false</appendAssemblyId>
+          <finalName>${project.name}-${project.version}-${os.detected.classifier}</finalName>
+          <outputDirectory>${app.distribution.directory}</outputDirectory>
+          <workDirectory>${project.build.directory}/assembly/work</workDirectory>
+          <skipAssembly>true</skipAssembly>
         </configuration>
         <executions>
-            <execution>
-                <id>make-distribution</id>
-                <phase>package</phase>
-                <goals>
-                    <goal>single</goal>
-                </goals>
-            </execution>
+          <execution>
+            <id>make-distribution</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
         </executions>
-    </plugin>
+      </plugin>
     </plugins>
   </build>
   <profiles>
@@ -412,36 +415,36 @@
     <profile>
       <id>dist</id>
       <activation>
-          <property>
-              <name>dist</name>
-          </property>
+        <property>
+          <name>dist</name>
+        </property>
       </activation>
       <build>
-          <plugins>
-              <plugin>
-                  <groupId>org.apache.maven.plugins</groupId>
-                  <artifactId>maven-assembly-plugin</artifactId>
-                  <configuration>
-                      <skipAssembly>false</skipAssembly>
-                      <descriptors>
-                          <descriptor>src/main/assembly/assembly.xml</descriptor>
-                      </descriptors>
-                  </configuration>
-              </plugin>
-          </plugins>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <configuration combine.self="append">
+              <skipAssembly>false</skipAssembly>
+              <descriptors>
+                <descriptor>src/main/assembly/assembly.xml</descriptor>
+              </descriptors>
+            </configuration>
+          </plugin>
+        </plugins>
       </build>
-  </profile>
-  <profile>
+    </profile>
+    <profile>
       <id>dist-windows</id>
       <activation>
-          <os>
-              <family>windows</family>
-          </os>
+        <os>
+          <family>windows</family>
+        </os>
       </activation>
       <properties>
-          <executable-suffix>.exe</executable-suffix>
+        <executable-suffix>.exe</executable-suffix>
       </properties>
-  </profile>
+    </profile>
     <profile>
       <id>release</id>
       <build>
@@ -470,6 +473,13 @@
                     <overwrite>true</overwrite>
                   </github>
                 </release>
+                <packagers>
+                  <brew>
+                      <active>RELEASE</active>
+                      <continueOnError>true</continueOnError>
+                      <multiPlatform>true</multiPlatform>
+                  </brew>
+              </packagers>
                 <distributions>
                   <yaml-validator>
                     <name>yaml-validator</name>
