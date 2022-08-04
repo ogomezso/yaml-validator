@@ -1,0 +1,151 @@
+[
+{
+  "name":"com.fasterxml.jackson.databind.ext.Java7SupportImpl",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.networknt.schema.AdditionalPropertiesValidator",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String","com.fasterxml.jackson.databind.JsonNode","com.networknt.schema.JsonSchema","com.networknt.schema.ValidationContext"] }]
+},
+{
+  "name":"com.networknt.schema.EnumValidator",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String","com.fasterxml.jackson.databind.JsonNode","com.networknt.schema.JsonSchema","com.networknt.schema.ValidationContext"] }]
+},
+{
+  "name":"com.networknt.schema.ItemsValidator",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String","com.fasterxml.jackson.databind.JsonNode","com.networknt.schema.JsonSchema","com.networknt.schema.ValidationContext"] }]
+},
+{
+  "name":"com.networknt.schema.MaxLengthValidator",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String","com.fasterxml.jackson.databind.JsonNode","com.networknt.schema.JsonSchema","com.networknt.schema.ValidationContext"] }]
+},
+{
+  "name":"com.networknt.schema.MaximumValidator",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String","com.fasterxml.jackson.databind.JsonNode","com.networknt.schema.JsonSchema","com.networknt.schema.ValidationContext"] }]
+},
+{
+  "name":"com.networknt.schema.MinItemsValidator",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String","com.fasterxml.jackson.databind.JsonNode","com.networknt.schema.JsonSchema","com.networknt.schema.ValidationContext"] }]
+},
+{
+  "name":"com.networknt.schema.MinLengthValidator",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String","com.fasterxml.jackson.databind.JsonNode","com.networknt.schema.JsonSchema","com.networknt.schema.ValidationContext"] }]
+},
+{
+  "name":"com.networknt.schema.MinimumValidator",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String","com.fasterxml.jackson.databind.JsonNode","com.networknt.schema.JsonSchema","com.networknt.schema.ValidationContext"] }]
+},
+{
+  "name":"com.networknt.schema.PatternValidator",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String","com.fasterxml.jackson.databind.JsonNode","com.networknt.schema.JsonSchema","com.networknt.schema.ValidationContext"] }]
+},
+{
+  "name":"com.networknt.schema.PropertiesValidator",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String","com.fasterxml.jackson.databind.JsonNode","com.networknt.schema.JsonSchema","com.networknt.schema.ValidationContext"] }]
+},
+{
+  "name":"com.networknt.schema.RequiredValidator",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String","com.fasterxml.jackson.databind.JsonNode","com.networknt.schema.JsonSchema","com.networknt.schema.ValidationContext"] }]
+},
+{
+  "name":"com.networknt.schema.TypeValidator",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String","com.fasterxml.jackson.databind.JsonNode","com.networknt.schema.JsonSchema","com.networknt.schema.ValidationContext"] }]
+},
+{
+  "name":"java.lang.Object",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"java.nio.file.Path"
+},
+{
+  "name":"java.nio.file.Paths",
+  "queriedMethods":[{"name":"get","parameterTypes":["java.lang.String","java.lang.String[]"] }]
+},
+{
+  "name":"java.sql.Connection"
+},
+{
+  "name":"java.sql.Date"
+},
+{
+  "name":"java.sql.Driver"
+},
+{
+  "name":"java.sql.DriverManager",
+  "queriedMethods":[
+    {"name":"getConnection","parameterTypes":["java.lang.String"] }, 
+    {"name":"getDriver","parameterTypes":["java.lang.String"] }
+  ]
+},
+{
+  "name":"java.sql.Time",
+  "queriedMethods":[{"name":"<init>","parameterTypes":["long"] }]
+},
+{
+  "name":"java.sql.Timestamp",
+  "queriedMethods":[{"name":"valueOf","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.time.Duration",
+  "queriedMethods":[{"name":"parse","parameterTypes":["java.lang.CharSequence"] }]
+},
+{
+  "name":"java.time.Instant",
+  "queriedMethods":[{"name":"parse","parameterTypes":["java.lang.CharSequence"] }]
+},
+{
+  "name":"java.time.LocalDate",
+  "queriedMethods":[{"name":"parse","parameterTypes":["java.lang.CharSequence"] }]
+},
+{
+  "name":"java.time.LocalDateTime",
+  "queriedMethods":[{"name":"parse","parameterTypes":["java.lang.CharSequence"] }]
+},
+{
+  "name":"java.time.LocalTime",
+  "queriedMethods":[{"name":"parse","parameterTypes":["java.lang.CharSequence"] }]
+},
+{
+  "name":"java.time.MonthDay",
+  "queriedMethods":[{"name":"parse","parameterTypes":["java.lang.CharSequence"] }]
+},
+{
+  "name":"java.time.OffsetDateTime",
+  "queriedMethods":[{"name":"parse","parameterTypes":["java.lang.CharSequence"] }]
+},
+{
+  "name":"java.time.OffsetTime",
+  "queriedMethods":[{"name":"parse","parameterTypes":["java.lang.CharSequence"] }]
+},
+{
+  "name":"java.time.Period",
+  "queriedMethods":[{"name":"parse","parameterTypes":["java.lang.CharSequence"] }]
+},
+{
+  "name":"java.time.Year",
+  "queriedMethods":[{"name":"parse","parameterTypes":["java.lang.CharSequence"] }]
+},
+{
+  "name":"java.time.YearMonth",
+  "queriedMethods":[{"name":"parse","parameterTypes":["java.lang.CharSequence"] }]
+},
+{
+  "name":"java.time.ZoneId",
+  "queriedMethods":[{"name":"of","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.time.ZoneOffset",
+  "queriedMethods":[{"name":"of","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.time.ZonedDateTime",
+  "queriedMethods":[{"name":"parse","parameterTypes":["java.lang.CharSequence"] }]
+},
+{
+  "name":"org.github.ogomezso.yamlvalidator.Cli",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true
+}
+]
