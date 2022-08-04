@@ -1,9 +1,10 @@
-name: 'early access release'
+name: 'early access'
 
 on:
   push:
     branches: [ main ]
     paths:
+      - '**/**'
   workflow_dispatch:
 
 jobs:
@@ -40,11 +41,9 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: 'Build Native Image'
-        working-directory: cluster-state/
         run: ../mvnw -B --file pom.xml -Pnative package
 
-      - name: 'Create distribution'
-        working-directory: cluster-state/
+      - name: 'Create distribution'-state/
         run: ../mvnw -B --file pom.xml -Pdist package -DskipTests
 
       - name: 'Upload build artifact'
@@ -67,8 +66,6 @@ jobs:
 
       - name: 'Download all build artifacts'
         uses: actions/download-artifact@v2
-        with:
-          path: cluster-state
 
       - name: 'Set up Java'
         uses: actions/setup-java@v2
@@ -85,8 +82,8 @@ jobs:
 
       - name: 'Release with JReleaser'
         env:
-          JRELEASER_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: ../mvnw -B --file pom.xml -Prelease -DartifactsDir=cluster-state/artifacts jreleaser:full-release
+          JRELEASER_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}e/
+        run: ../mvnw -B --file pom.xml -Prelease -DartifactsDir=/artifacts jreleaser:full-release
 
       - name: JReleaser output
         if: always()
@@ -94,5 +91,5 @@ jobs:
         with:
           name: jreleaser-logs
           path: |
-           target/jreleaser/trace.log
-           target/jreleaser/output.properties
+            target/jreleaser/trace.log
+            target/jreleaser/output.properties
