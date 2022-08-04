@@ -11,9 +11,9 @@
   </formats>
   <files>
     <file>
-      <source>${project.build.directory}/yaml-validator-${project.version}${executable-suffix}</source>
+      <source>${project.build.directory}/yaml-validator</source>
       <outputDirectory>./bin</outputDirectory>
-      <destName>yaml-validator${executable-suffix}</destName>
+      <destName>yaml-validator</destName>
     </file>
   </files>
 </assembly>
