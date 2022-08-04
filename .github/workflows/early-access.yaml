@@ -52,8 +52,8 @@ jobs:
         with:
           name: artifacts
           path: |
-            cluster-state/target/*.zip
-            cluster-state/target/*.tar.gz
+            target/*.zip
+            target/*.tar.gz
   # Collect all executables and release
   release:
     needs: [ build ]
@@ -86,7 +86,6 @@ jobs:
       - name: 'Release with JReleaser'
         env:
           JRELEASER_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        working-directory: cluster-state/
         run: ../mvnw -B --file pom.xml -Prelease -DartifactsDir=cluster-state/artifacts jreleaser:full-release
 
       - name: JReleaser output
@@ -95,5 +94,5 @@ jobs:
         with:
           name: jreleaser-logs
           path: |
-            cluster-state/target/jreleaser/trace.log
-            cluster-state/target/jreleaser/output.properties
+           target/jreleaser/trace.log
+           target/jreleaser/output.properties
