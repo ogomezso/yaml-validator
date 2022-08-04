@@ -406,6 +406,9 @@
               <name>dist</name>
           </property>
       </activation>
+            <properties>
+          <executable-suffix>.sh</executable-suffix>
+      </properties>
       <build>
           <plugins>
               <plugin>
