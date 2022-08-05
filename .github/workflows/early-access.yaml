@@ -82,7 +82,7 @@ jobs:
 
       - name: 'Release with JReleaser'
         env:
-          JRELEASER_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}e/
+          JRELEASER_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: ./mvnw -B --file pom.xml -Prelease -DartifactsDir=./artifacts jreleaser:full-release
 
       - name: JReleaser output
