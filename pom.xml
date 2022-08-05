@@ -32,14 +32,12 @@
     <version.clean.plugin>3.1.0</version.clean.plugin>
     <version.compiler.plugin>3.9.0</version.compiler.plugin>
     <version.dependency.plugin>3.1.2</version.dependency.plugin>
-    <version.deploy.plugin>3.0.0-M2</version.deploy.plugin>
     <version.directory.plugin>0.3.1</version.directory.plugin>
     <version.enforcer.plugin>3.0.0-M3</version.enforcer.plugin>
     <version.enforcer.rules>1.5.1</version.enforcer.rules>
     <version.failsafe.plugin>3.0.0-M5</version.failsafe.plugin>
     <version.git.plugin>3.0.1</version.git.plugin>
     <version.gpg.plugin>1.6</version.gpg.plugin>
-    <version.install.plugin>3.0.0-M1</version.install.plugin>
     <version.javadoc.plugin>3.2.0</version.javadoc.plugin>
     <version.jar.plugin>3.2.2</version.jar.plugin>
     <version.license.plugin>4.0.rc2</version.license.plugin>
@@ -203,23 +201,8 @@
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-javadoc-plugin</artifactId>
-          <version>${version.javadoc.plugin}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>
           <version>${version.source.plugin}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>${version.surefire.plugin}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>versions-maven-plugin</artifactId>
-          <version>${version.versions.plugin}</version>
         </plugin>
         <plugin>
           <groupId>org.commonjava.maven.plugins</groupId>
@@ -252,31 +235,6 @@
         <configuration>
           <parameters>${maven.compiler.parameters}</parameters>
         </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-enforcer-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>enforce-plugin-versions</id>
-            <goals>
-              <goal>enforce</goal>
-            </goals>
-            <configuration>
-              <rules>
-                <requireJavaVersion>
-                  <version>[${java.version},)</version>
-                </requireJavaVersion>
-                <requirePluginVersions>
-                  <banLatest>true</banLatest>
-                  <banRelease>true</banRelease>
-                  <banSnapshots>true</banSnapshots>
-                  <phases>clean,deploy,site</phases>
-                </requirePluginVersions>
-              </rules>
-            </configuration>
-          </execution>
-        </executions>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
