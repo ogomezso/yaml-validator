@@ -8,6 +8,9 @@
   <version>1.0-SNAPSHOT</version>
 
   <name>yaml-validator</name>
+  <description>Yaml validator based on JSONSchema</description>
+  <inceptionYear>2022</inceptionYear>
+  <url>https://github.com/ogomezso/yaml-validator</url>
 
   <properties>
     <project.github.repository>ogomezso/yaml-validator</project.github.repository>
@@ -433,11 +436,11 @@
                 </release>
                 <packagers>
                   <brew>
-                      <active>RELEASE</active>
-                      <continueOnError>true</continueOnError>
-                      <multiPlatform>true</multiPlatform>
+                    <active>RELEASE</active>
+                    <continueOnError>true</continueOnError>
+                    <multiPlatform>true</multiPlatform>
                   </brew>
-              </packagers>
+                </packagers>
                 <distributions>
                   <yaml-validator>
                     <name>yaml-validator</name>
