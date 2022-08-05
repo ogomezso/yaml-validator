@@ -49,8 +49,8 @@ jobs:
         with:
           name: artifacts
           path: |
-            ./HEAD
-            ./*_VERSION
+            HEAD
+            *_VERSION
   # Build native executable per runner
   build:
     needs: [ version ]
