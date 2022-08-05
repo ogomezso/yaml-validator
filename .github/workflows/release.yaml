@@ -30,9 +30,6 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-      - name: 'Check artifacts'
-        run: ls
-
       - name: 'Set release version'
         id: version
         run: |
@@ -47,14 +44,18 @@ jobs:
           ./mvnw -B --file pom.xml versions:set versions:commit -DnewVersion=$RELEASE_VERSION
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --global user.name "GitHub Action"
-          
+
       - name: 'Upload version files'
         uses: actions/upload-artifact@v2
         with:
           name: artifacts
           path: |
-            ./yaml-validator/HEAD
-            ./yaml-validator/*_VERSION
+            ./HEAD
+            ./*_VERSION
+            
+      - name: 'Check artifacts'
+        run: ls 
+
   # Build native executable per runner
   build:
     needs: [ version ]
