@@ -32,6 +32,7 @@ jobs:
 
       - name: 'Set release version'
         id: version
+        working-directory: "yaml-validator"
         run: |
           RELEASE_VERSION=${{ github.event.inputs.version }}
           NEXT_VERSION=${{ github.event.inputs.next }}
@@ -49,8 +50,8 @@ jobs:
         with:
           name: artifacts
           path: |
-            HEAD
-            *_VERSION
+            ./yaml-validator/HEAD
+            ./yaml-validator/*_VERSION
   # Build native executable per runner
   build:
     needs: [ version ]
@@ -65,6 +66,9 @@ jobs:
       - name: 'Download all build artifacts'
         uses: actions/download-artifact@v2
 
+      - name: 'Check artifacts'
+        run: ls 
+        
       - name: 'Read HEAD ref'
         id: head
         uses: juliangruber/read-file-action@v1
