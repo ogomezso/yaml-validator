@@ -2,13 +2,13 @@
 
 ## Introduction
 
-A simple tool based on [networknt JSON Schema Validator Library](https://github.com/networknt/json-schema-validator) that allows you to validate a Yaml or (json) input file against a JSONSchema one.
+A simple command line tool based on [picocli](https://picocli.info/) and  [networknt JSON Schema Validator Library](https://github.com/networknt/json-schema-validator) that allows you to validate a Yaml or (json) input file against a JSONSchema one.
 
 ## Distribution
 
-The application will be distributed as [GraalVM Native Image]() on 3 principal OS Distributions (Linux, OSx, Windows). You can find the available releases on:
+The application will be distributed as [GraalVM Native Image](https://www.graalvm.org/22.1/reference-manual/native-image/) on 3 principal OS Distributions (Linux, OSx, Windows). You can find the available releases on:
 
-[Release Page]()
+[Release Page](https://github.com/ogomezso/yaml-validator/releases)
 
 ## Compilation and generation of native image
 
