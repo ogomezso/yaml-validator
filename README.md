@@ -1,3 +1,5 @@
+[![early access](https://github.com/ogomezso/yaml-validator/actions/workflows/early-access.yaml/badge.svg)](https://github.com/ogomezso/yaml-validator/actions/workflows/early-access.yaml)}
+
 # YAML Validator
 
 ## Introduction
